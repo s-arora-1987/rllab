@@ -16,8 +16,8 @@ class NoisyObservationEnv(ProxyEnv, Serializable):
                  env,
                  obs_noise=1e-1,
                  ):
-        super(NoisyObservationEnv, self).__init__(env)
         Serializable.quick_init(self, locals())
+        super(NoisyObservationEnv, self).__init__(env)
         self.obs_noise = obs_noise
 
     def get_obs_noise_scale_factor(self, obs):
@@ -56,8 +56,8 @@ class DelayedActionEnv(ProxyEnv, Serializable):
                  action_delay=3,
                  ):
         assert action_delay > 0, "Should not use this env transformer"
-        super(DelayedActionEnv, self).__init__(env)
         Serializable.quick_init(self, locals())
+        super(DelayedActionEnv, self).__init__(env)
         self.action_delay = action_delay
         self._queued_actions = None
 

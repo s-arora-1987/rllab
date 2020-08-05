@@ -82,7 +82,6 @@ envs.append(
     GymEnv('CartPole-v0')
 )
 
-
 @tools.params(*envs)
 def test_env(env):
     print("Testing", env.__class__)
@@ -100,3 +99,4 @@ def test_env(env):
     else:
         env.render()
     env.terminate()
+
